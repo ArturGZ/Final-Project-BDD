@@ -20,8 +20,8 @@ Prompt Creando usuario en apqbdd_s1
 connect sys/&&syspass@apqbdd_s1 as sysdba
 @s-01-autos-usuario.sql
 
-Prompt Creando usuario en apqbdd_s1
-connect sys/&&syspass@apqbdd_s1 as sysdba
+Prompt Creando usuario en apqbdd_s2
+connect sys/&&syspass@apqbdd_s2 as sysdba
 @s-01-autos-usuario.sql
 
 Prompt Listo!!
