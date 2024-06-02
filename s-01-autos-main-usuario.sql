@@ -25,3 +25,4 @@ connect sys/&&syspass@apqbdd_s2 as sysdba
 @s-01-autos-usuario.sql
 
 Prompt Listo!!
+disconnect

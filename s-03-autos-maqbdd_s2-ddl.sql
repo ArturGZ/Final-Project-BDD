@@ -1,6 +1,6 @@
 --@Autor:           J. Miguel Arroyo Quiroz
 --@Fecha:           02/06/2024
---@Descripción:     Código DDL Para El Nodo 2 PF BDD
+--@Descripción:     Código DDL Para El Nodo 2 MAQBDD_S2 PF BDD
 
 -- TABLE: PAIS_F2_MAQ_S2 
 CREATE TABLE PAIS_F2_MAQ_S2(
