@@ -37,3 +37,4 @@ connect autos_bdd/&&autos_bddpass@apqbdd_s2
 @s-04-autos-valida-sinonimos.sql
 
 prompt Listo!
+disconnect

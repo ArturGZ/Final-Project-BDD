@@ -4,60 +4,60 @@
 
 Prompt == Validando sinonimos para PAIS
 select
-(select count(*) from pais_1) as pais_1,
-(select count(*) from pais_2) as pais_2
+(select count(*) from pais_f1) as pais_f1,
+(select count(*) from pais_f2) as pais_f2
 from dual;
 
 Prompt == Validando sinonimos para SUCURSAL
 select
-(select count(*) from sucursal_1) as sucursal_1,
-(select count(*) from sucursal_2) as sucursal_2,
-(select count(*) from sucursal_3) as sucursal_3
+(select count(*) from sucursal_f1) as sucursal_f1,
+(select count(*) from sucursal_f2) as sucursal_f2,
+(select count(*) from sucursal_f3) as sucursal_f3
 from dual;
 
 Prompt == Validando sinonimos para AUTO
 select
-(select count(*) from auto_1) as auto_1,
-(select count(*) from auto_2) as auto_2,
-(select count(*) from auto_3) as auto_3
+(select count(*) from auto_f1) as auto_f1,
+(select count(*) from auto_f2) as auto_f2,
+(select count(*) from auto_f3) as auto_f3
 from dual;
 
 Prompt == Validando sinonimos para CLIENTE
 select
-(select count(*) from cliente_1) as cliente_1,
-(select count(*) from cliente_2) as cliente_2,
-(select count(*) from cliente_3) as cliente_3
+(select count(*) from cliente_f1) as cliente_f1,
+(select count(*) from cliente_f2) as cliente_f2,
+(select count(*) from cliente_f3) as cliente_f3
 from dual;
 
 Prompt == Validando sinonimos para PAGO_AUTO
 select
-(select count(*) from pago_auto_1) as pago_auto_1,
-(select count(*) from pago_auto_2) as pago_auto_2,
-(select count(*) from pago_auto_3) as pago_auto_3
+(select count(*) from pago_auto_f1) as pago_auto_f1,
+(select count(*) from pago_auto_f2) as pago_auto_f2,
+(select count(*) from pago_auto_f3) as pago_auto_f3
 from dual;
 
 Prompt == Validando sinonimos para AUTO_CARGA
 select
-(select count(*) from auto_carga_1) as auto_carga_1,
-(select count(*) from auto_carga_2) as auto_carga_2
+(select count(*) from auto_carga_f1) as auto_carga_f1,
+(select count(*) from auto_carga_f2) as auto_carga_f2
 from dual;
 
 Prompt == Validando sinonimos para AUTO_PARTICULAR
 select
-(select count(*) from auto_particular_1) as auto_particular_1,
-(select count(*) from auto_particular_2) as auto_particular_2
+(select count(*) from auto_particular_f1) as auto_particular_f1,
+(select count(*) from auto_particular_f2) as auto_particular_f2
 from dual;
 
 Prompt == Validando sinonimos para TARJETA_CLIENTE
 select
-(select count(*) from tarjeta_cliente_1) as tarjeta_cliente_1,
-(select count(*) from tarjeta_cliente_2) as tarjeta_cliente_2
+(select count(*) from tarjeta_cliente_f1) as tarjeta_cliente_f1,
+(select count(*) from tarjeta_cliente_f2) as tarjeta_cliente_f2
 from dual;
 
 Prompt == Validando sinonimos para HISTORICO_STATUS_AUTO
 select
-(select count(*) from historico_status_auto_1) as historico_status_auto_1,
-(select count(*) from historico_status_auto_2) as historico_status_auto_2
+(select count(*) from historico_status_auto_f1) as historico_status_auto_f1,
+(select count(*) from historico_status_auto_f2) as historico_status_auto_f2
 from dual;
 
 Prompt == Validando sinonimos para MODELO
