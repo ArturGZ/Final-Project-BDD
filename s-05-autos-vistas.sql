@@ -33,7 +33,7 @@ create or replace view auto_carga as
     select auto_id,peso_maximo,volumen,tipo_combustible
     from auto_carga_f2;
 
-create or replace view historico_status as
+create or replace view historico_status_auto as
     select historico_status_id,fecha_status,status_auto_id,auto_id
     from historico_status_auto_f1
     union all
