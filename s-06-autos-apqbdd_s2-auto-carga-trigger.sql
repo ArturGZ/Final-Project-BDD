@@ -26,7 +26,7 @@ begin
 					insert into auto_carga_f2(auto_id, peso_maximo, volumen, tipo_combustible)
 					values(:new.auto_id, :new.peso_maximo, :new.volumen, :new.tipo_combustible);
 				else
-			 		raise_application_error(20020, 
+			 		raise_application_error(-20020, 
                 		'Error de integridad para el campo auto_id : '
                 		||  :new.auto_id
                 		|| ' No se encontró el registro padre en fragmentos');   
@@ -34,7 +34,7 @@ begin
 			end if;
 
 		when updating then
-     		raise_application_error(20030, 
+     		raise_application_error(-20030, 
                 'Operación Update aún no soportada');
 
 		when deleting then 
@@ -52,7 +52,7 @@ begin
 				if v_count > 0 then
 					delete from auto_carga_f2 where auto_id = :old.auto_id;
 			 	else
-			 		raise_application_error(20020, 
+			 		raise_application_error(-20020, 
                 		'Error de integridad para el campo auto_id : '
                 		||  :old.auto_id
                 		|| ' No se encontró el registro padre en fragmentos');   

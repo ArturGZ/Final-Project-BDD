@@ -20,22 +20,22 @@ begin
 				values(:new.historico_status_id, :new.fecha_status, 
                     :new.status_auto_id, :new.auto_id);
 			else
-				raise_application_error(20010, 
+				raise_application_error(-20010, 
 					'Valor incorrecto para el campo fecha_status : '
         			|| :new.fecha_status);
 			end if;
 		
 		when updating then
-            raise_application_error(20030, 
+            raise_application_error(-20030, 
 				'Operación Update aún no soportada');
 
 		when deleting then 
 			if :old.fecha_status < to_date('01/01/2011','dd/mm/yyyy') then
-				delete from historico_status_auto_f1 where pais_id = :old.pais_id;
+				delete from historico_status_auto_f1 where historico_status_id = :old.historico_status_id;
 			elsif :old.fecha_status >= to_date('01/01/2011','dd/mm/yyyy') then
-				delete from historico_status_auto_f2 where pais_id  = :old.pais_id;
+				delete from historico_status_auto_f2 where historico_status_id  = :old.historico_status_id;
 			else
-				raise_application_error(20010, 
+				raise_application_error(-20010, 
 					'Valor incorrecto para el campo fecha_status : '
         			|| :old.fecha_status);
 			end if;

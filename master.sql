@@ -15,4 +15,6 @@ whenever sqlerror exit rollback;
 
 @s-05-autos-main-vistas.sql
 
--- @s-06-autos-main-triggers.sql
+@s-06-autos-main-triggers.sql
+
+--Para encontrar warnings de trigers: SELECT * FROM USER_ERRORS WHERE NAME = 'T_DML_HISTORICO_STATUS_AUTO';

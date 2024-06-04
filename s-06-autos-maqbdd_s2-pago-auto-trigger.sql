@@ -88,10 +88,10 @@ begin
             --Eliminando en fragmento 1
             select count(*) into v_count
             from cliente_f1
-            where cliente_id =:new.cliente_id;
+            where cliente_id =:old.cliente_id;
             select count(*) into v_count2
             from auto_f1
-            where auto_id=:new.auto_id;
+            where auto_id=:old.auto_id;
             if v_count>0 and v_count2>0 then
                 delete from pago_auto_f1 where cliente_id =:old.cliente_id
                     and auto_id=:old.auto_id;
@@ -99,10 +99,10 @@ begin
                 --Eliminando en fragmento 2
                 select count(*) into v_count
                 from cliente_f2
-                where cliente_id =:new.cliente_id;
+                where cliente_id =:old.cliente_id;
                 select count(*) into v_count2
                 from auto_f1
-                where auto_id=:new.auto_id;
+                where auto_id=:old.auto_id;
                 if v_count>0 and v_count2>0 then
                     delete from pago_auto_f2 where cliente_id =:old.cliente_id
                         and auto_id=:old.auto_id;
@@ -110,19 +110,19 @@ begin
                     --Eliminando en fragmento 3
                     select count(*) into v_count
                     from cliente_f3
-                    where cliente_id =:new.cliente_id;
+                    where cliente_id =:old.cliente_id;
                     select count(*) into v_count2
                     from auto_f1
-                    where auto_id=:new.auto_id;
+                    where auto_id=:old.auto_id;
                     if v_count>0 and v_count2>0 then
                         delete from pago_auto_f3 where cliente_id =:old.cliente_id
                             and auto_id=:old.auto_id;
                     else 
                         raise_application_error(-20020, 
                             'Error de integridad para el campo cliente_id : '
-                            || :new.cliente_id
+                            || :old.cliente_id
                             || ' con el campo auto_id : ' 
-                            || :new.auto_id
+                            || :old.auto_id
                             || ' No se encontró el registro padre en fragmentos'); 
                     end if;
                 end if;

@@ -31,7 +31,7 @@ begin
 					values(:new.auto_id,:new.anio,:new.num_serie,:new.tipo,:new.precio,
 					    :new.fecha_status,:new.sucursal_id,:new.status_auto_id,:new.modelo_id);
 				else
-			 		raise_application_error(20020, 
+			 		raise_application_error(-20020, 
                 		'Error de integridad para el campo sucursal_id : '
                 		||  :new.sucursal_id
                 		|| ' No se encontró el registro padre en fragmentos');   
@@ -48,7 +48,7 @@ begin
     			where auto_id = :new.auto_id;  
 
 		when updating then
-     		raise_application_error(20030, 
+     		raise_application_error(-20030, 
                 'Operación Update aún no soportada');
 
 		when deleting then 
@@ -67,7 +67,7 @@ begin
 				if v_count > 0 then
 					delete from auto_f2 where auto_id = :old.auto_id;
 			 	else
-			 		raise_application_error(20020, 
+			 		raise_application_error(-20020, 
                 		'Error de integridad para el campo sucursal_id : '
                 		||  :old.sucursal_id
                 		|| ' No se encontró el registro padre en fragmentos');   

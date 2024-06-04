@@ -16,14 +16,14 @@ begin
 				insert into pais_f2(pais_id, nombre, clave, region)
 				values(:new.pais_id, :new.nombre, :new.clave, :new.region);
 			else
-				raise_application_error(20010, 
+				raise_application_error(-20010, 
 					'Valor incorrecto para el campo region : '
         			|| :new.region
                    	|| ' Solo se permiten los valores AME y EUR ');
 			end if;
 		
 		when updating then
-            raise_application_error(20030, 
+            raise_application_error(-20030, 
 				'Operación Update aún no soportada');
 
 		when deleting then 
@@ -32,7 +32,7 @@ begin
 			elsif :old.region='EUR' then
 				delete from pais_f2 where pais_id  = :old.pais_id;
 			else
-				raise_application_error(20010, 
+				raise_application_error(-20010, 
 					'Valor incorrecto para el campo region : '
         			|| :old.region
                    	|| ' Solo se permiten los valores AME y EUR ');

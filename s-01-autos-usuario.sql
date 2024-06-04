@@ -21,4 +21,5 @@ create user autos_bdd identified by autos_bdd quota unlimited on users;
 
 Prompt Otorgando permisos al usuario autos_bdd
 grant create session, create table, create sequence, create procedure, create view, 
-    create synonym, create type, create database link, create trigger to autos_bdd;
+    create synonym, create type, create database link, create trigger,
+    create any directory to autos_bdd;

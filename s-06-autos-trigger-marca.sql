@@ -54,7 +54,7 @@ begin
         end if;
 
         when updating then
-            raise_application_error(20030, 
+            raise_application_error(-20030, 
                 'Operacion update no soportada en este proyecto');
     end case;
 end;
