@@ -32,7 +32,7 @@ Prompt ==================================================
 Pause => Presionar Enter para Iniciar, Ctrl-C para cancelar
 
 Prompt => Realizando limpieza inicial ....
--- set feedback off
+set feedback off
 delete from tarjeta_cliente;
 delete from pago_auto;
 delete from cliente;
@@ -47,9 +47,9 @@ delete from sucursal;
 delete from pais;
 delete from modelo;
 delete from marca;
--- set feedback on
+set feedback on
 
-select count(*) from sucursal;
+-- select count(*) from sucursal;
 
 Prompt ===== Limpieza concluida =====
 

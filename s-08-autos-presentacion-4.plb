@@ -3,7 +3,7 @@ define p_fragmento='C'
 Prompt seleccionar la PDB para validar
 connect autos_bdd/autos_bdd@&pdb
 Prompt  Indicar la Tecnica para fragmentar pago_auto:
-accept p_fragmento char default '&&p_fragmento' prompt  '(C) empleando cliente,  (A) empleando Auto: '
+accept p_fragmento char default '&&p_fragmento' prompt  '(C) empleando cliente,  (A) empleando Auto: Enter para [&&p_fragmento] '
 
 whenever sqlerror exit rollback;
 set serveroutput on

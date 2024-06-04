@@ -51,11 +51,37 @@ begin
                 raise_application_error(-20040,
                     'Número incorrecto de registros eliminados en tabla replicada: '
                     ||v_count);
-        end if;
+            end if;
 
         when updating then
-            raise_application_error(-20030, 
-                'Operacion update no soportada en este proyecto');
+            v_count := 0;
+            --update en replica local
+            update marca_r1 set marca_id = :new.marca_id, clave=:new.clave,
+                descripcion=:new.descripcion, activo=:new.activo
+			where marca_id = :old.marca_id;
+            v_count := v_count + sql%rowcount;
+            --update en replica 2
+            update marca_r2 set marca_id = :new.marca_id, clave=:new.clave,
+                descripcion=:new.descripcion, activo=:new.activo
+			where marca_id = :old.marca_id;
+            v_count := v_count + sql%rowcount;
+            --update en replica 3
+            update marca_r3 set marca_id = :new.marca_id, clave=:new.clave,
+                descripcion=:new.descripcion, activo=:new.activo
+			where marca_id = :old.marca_id;
+            v_count := v_count + sql%rowcount;
+            --update en replica 4
+            update marca_r4 set marca_id = :new.marca_id, clave=:new.clave,
+                descripcion=:new.descripcion, activo=:new.activo
+			where marca_id = :old.marca_id;
+            v_count := v_count + sql%rowcount;
+
+            if v_count <> 4 then
+                raise_application_error(-20040,
+                    'Número incorrecto de registros actualizados en tabla replicada, se actualizaron: '
+                    || v_count
+                    || ' registros');
+            end if;
     end case;
 end;
 /
